@@ -1,9 +1,19 @@
 package ClassesDIO;
 
 public class Conta {
-	private int agencia;
-	private int numero;
-	private double saldo;
+	
+	private static final int AGENCIA_PADRAO = 001;
+	private static int SEQUENCIAL = 1;
+	
+	protected int agencia;
+	protected int numero;
+	protected double saldo;
+
+	
+	public Conta() {
+		this.agencia = AGENCIA_PADRAO;
+		this.numero = SEQUENCIAL++;
+	}
 
 	public void sacar() {
 
