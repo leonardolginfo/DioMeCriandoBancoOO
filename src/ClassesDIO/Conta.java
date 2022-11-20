@@ -8,16 +8,20 @@ public class Conta {
 	protected int agencia;
 	protected int numero;
 	protected double saldo;
+	protected Cliente cliente;
 
-	public Conta() {
+	public Conta(Cliente cliente) {
 		this.agencia = AGENCIA_PADRAO;
 		this.numero = SEQUENCIAL++;
+		this.cliente = cliente;
 	}
 
 	protected void imprimirInfoComuns() {
+		System.out.println(String.format("Titular: %s" , this.cliente.getNome()));
 		System.out.println(String.format("Agencia: %d" , this.agencia));
 		System.out.println(String.format("Número: %d",this.numero));
 		System.out.println(String.format("Saldo: %.2f",this.saldo));
+		System.out.println("");
 	}
 	
 	public void sacar(double valor) {
